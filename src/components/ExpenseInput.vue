@@ -1,23 +1,23 @@
 <template>
-  <main class="form">
+  <main class="form card">
     <section class="field">
-      <input v-model="state.name" placeholder="Name" type="text" @blur="$v.name.$touch()">
-      <div class="input-errors" v-for="error of $v.name.$errors" :key="error.$uid">
-        <div class="error-msg">{{ error.$message }}</div>
+      <input class="input-field full-width" v-model="state.name" placeholder="Name" type="text" @blur="$v.name.$touch()">
+      <div class="input-errors">
+        <div v-for="error of $v.name.$errors" :key="error.$uid" class="error-msg">{{ error.$message }}</div>
       </div>
     </section>
 
     <div class="row">
-      <select v-model="state.type">
-        <option value="in">In</option>
-        <option value="out">Out</option>
+      <select class="input-field" v-model="state.type">
+        <option value="in">+</option>
+        <option value="out">-</option>
       </select>
 
-      <section class="field">
-        <input v-model="state.value" placeholder="Value" type="number" @blur="$v.value.$touch()">
+      <section class="field full-width">
+        <input class="input-field full-width" v-model="state.value" placeholder="Value" type="number" @blur="$v.value.$touch()">
         
-        <div class="input-errors" v-for="error of $v.value.$errors" :key="error.$uid">
-          <div class="error-msg">{{ error.$message }}</div>
+        <div class="input-errors">
+          <div v-for="error of $v.value.$errors" :key="error.$uid" class="error-msg">{{ error.$message }}</div>
         </div>
       </section>
     </div>
@@ -61,19 +61,6 @@ const onSubmit = () => emit('submit', state);
   width: 100%;
   margin-bottom: 16px;
 }
-
-.field, button {
-  width: 100%;
-}
-.field > input {
-  width: 100%;
-}
-
-.field > input, select {
-  padding: 8px;
-  margin-bottom: 6px;
-}
-
 .row {
   display: flex;
   gap: 6px;

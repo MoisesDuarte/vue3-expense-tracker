@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="card">
     <section class="expense-total">
       <article>Total</article>
       <article>Value</article>

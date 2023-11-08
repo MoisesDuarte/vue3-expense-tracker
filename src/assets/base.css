@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  border-radius: 5px;
+  padding: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.input-field {
+  height: 32px;
+  background-color: whitesmoke;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border: none;
+  border-bottom: 1px solid slategrey;
+  padding: 8px;
+  margin-bottom: 2px;
+}
+
+.input-field:focus {
+  outline: none;
+  border-bottom: 1px solid black;
+  transition: border-bottom 1s;
+}
+
+.input-errors {
+  height: 16px;
+  font-size: 10px;
+  color: crimson;
+  margin-bottom: 4px;
+  animation: fadeIn 0.75s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

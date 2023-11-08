@@ -30,11 +30,8 @@ const deleteExpense = (id: string) => {
 </script>
 
 <style>
-* {
-  box-sizing: border-box;
-}
-
 .app {
+  margin: auto;
   width: 300px;
 }
 </style>
