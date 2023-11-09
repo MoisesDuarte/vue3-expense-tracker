@@ -1,8 +1,11 @@
 <template>
   <main class="app">
-    <expense-input @submit="addExpense" />
-    <expense-list :items="expenses" @delete="deleteExpense" />
-    <expense-total :value="total" />
+    <h1>Expense Tracker</h1>
+    <section>
+      <expense-input @submit="addExpense" />
+      <expense-list :items="expenses" @delete="deleteExpense" />
+      <expense-total :value="total" />
+    </section>
   </main>
 </template>
 
@@ -47,7 +50,13 @@ const deleteExpense = (id: string) => {
 
 <style>
 .app {
-  margin: auto;
-  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app>section {
+  width: 50%;
 }
 </style>
