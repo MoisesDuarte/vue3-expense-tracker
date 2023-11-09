@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 .card {
   border-radius: 5px;
   padding: 12px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .full-width {
@@ -21,7 +24,7 @@ select {
   border: none;
   border-bottom: 1px solid slategrey;
   padding: 8px;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 input:focus,
@@ -31,19 +34,48 @@ select:focus {
   transition: border-bottom 1s;
 }
 
-.input-errors {
-  height: 16px;
-  font-size: 10px;
-  color: crimson;
-  margin-bottom: 4px;
-  animation: fadeIn 0.75s;
+input.error,
+select.error {
+  border-bottom-color: red;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+button {
+  border-radius: 6px;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button.danger {
+  color: white;
+  background-color: red;
+}
+
+button:hover {
+  filter: brightness(95%);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.input-errors {
+  position: relative;
+  height: 16px;
+  font-size: 12px;
+  color: red;
+  margin-bottom: 6px;
 }

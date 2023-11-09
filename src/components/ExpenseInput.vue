@@ -1,11 +1,11 @@
 <template>
   <main class="form card">
     <section class="field">
-      <input class="input-field full-width" v-model="state.name" placeholder="Name" type="text"
-        @blur="$v.name.$touch()" />
+      <input class="input-field full-width" :class="{ error: $v.name.$invalid }" v-model="state.name" placeholder="Name"
+        type="text" @blur="$v.name.$touch()" />
       <div class="input-errors">
         <div v-for="error of $v.name.$errors" :key="error.$uid" class="error-msg">
-          {{ error.$message }}
+          * {{ error.$message }}
         </div>
       </div>
     </section>
@@ -17,16 +17,17 @@
       </select>
 
       <section class="field full-width">
-        <input class="full-width" v-model="state.value" placeholder="Value" type="number" @blur="$v.value.$touch()" />
+        <input class="full-width" :class="{ error: $v.value.$invalid }" v-model="state.value" placeholder="Value"
+          type="number" @blur="$v.value.$touch()" />
         <div class="input-errors">
           <div v-for="error of $v.value.$errors" :key="error.$uid" class="error-msg">
-            {{ error.$message }}
+            * {{ error.$message }}
           </div>
         </div>
       </section>
     </div>
 
-    <button :disabled="$v.$invalid" @click="onSubmit">Ok</button>
+    <button class="full-width" :disabled="$v.$invalid" @click="onSubmit">Ok</button>
   </main>
 </template>
 
