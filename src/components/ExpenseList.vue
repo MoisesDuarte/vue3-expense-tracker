@@ -9,22 +9,18 @@
         </tr>
         <tr v-for="item in $props.items" :key="item.id">
           <td>{{ item.name }}</td>
-          <td>{{ item.type === 'out' && '-' || '' }} {{ item.value }}</td>
-          <td class="delete-action" @click="$emit('delete', item.id)">
-            Delete
-          </td>
+          <td>{{ (item.type === 'out' && '-') || '' }} {{ item.value }}</td>
+          <td class="delete-action" @click="$emit('delete', item.id)">Delete</td>
         </tr>
       </table>
     </template>
 
-    <template v-else>
-      No expenses to track!
-    </template>
+    <template v-else> No expenses to track! </template>
   </main>
 </template>
 
 <script setup lang="ts">
-import type { TExpenseItem } from '@/types/expense.type';
+import type { TExpenseItem } from '@/types/expense.type'
 
 type TEmits = {
   (e: 'delete', id: string): void
@@ -36,7 +32,7 @@ type TProps = {
 
 defineEmits<TEmits>()
 
-defineProps<TProps>();
+defineProps<TProps>()
 </script>
 
 <style scoped>
@@ -50,7 +46,8 @@ defineProps<TProps>();
   margin-bottom: 16px;
 }
 
-.expense-table > tr > th, td {
+.expense-table > tr > th,
+td {
   width: 33.33%;
   border: 1px solid black;
   text-align: center;

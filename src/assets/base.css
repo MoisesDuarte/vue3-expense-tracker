@@ -12,7 +12,8 @@
   width: 100%;
 }
 
-.input-field {
+input,
+select {
   height: 32px;
   background-color: whitesmoke;
   border-top-left-radius: 6px;
@@ -23,7 +24,8 @@
   margin-bottom: 2px;
 }
 
-.input-field:focus {
+input:focus,
+select:focus {
   outline: none;
   border-bottom: 1px solid black;
   transition: border-bottom 1s;
@@ -38,6 +40,10 @@
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

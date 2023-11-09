@@ -1,7 +1,7 @@
 export type TExpense = {
-  name: string;
-  type: 'in' | 'out';
-  value: number;
+  name: string
+  type: 'in' | 'out'
+  value: number
 }
 
-export type TExpenseItem = TExpense & { id: string; };
+export type TExpenseItem = TExpense & { id: string }
